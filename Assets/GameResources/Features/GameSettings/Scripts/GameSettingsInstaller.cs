@@ -10,11 +10,26 @@
     public class GameSettingsInstaller : ScriptableObjectInstaller
     {
         [SerializeField]
-        protected MovementSettings movementSettings = default;
+        private GeneralSetting _generalSettings = default;
+        [SerializeField]
+        private MovementSettings _movementSettings = default;
+        [SerializeField]
+        private BallonSpawnSettings _ballonSpawnSettings = default;
 
         public override void InstallBindings()
         {
-            Container.BindInstance(movementSettings).AsSingle();
+            BindGeneralSettings();
+            BindMovementSettings();
+            BindSpawnSettings();
         }
+
+        private void BindGeneralSettings() =>
+            Container.BindInstance(_generalSettings).AsSingle();
+
+        private void BindMovementSettings() =>
+            Container.BindInstance(_movementSettings).AsSingle();
+
+        private void BindSpawnSettings() =>
+            Container.BindInstance(_ballonSpawnSettings).AsSingle();
     }
 }
