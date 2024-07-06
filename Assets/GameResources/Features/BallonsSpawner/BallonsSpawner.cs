@@ -3,6 +3,7 @@
     using Ballons.Features.GameSettings;
     using Ballons.Features.GameSpeed;
     using Ballons.Features.Utilities;
+    using Balloons.Features.ActiveBalloons;
     using System.Collections;
     using UnityEngine;
     using Zenject;
@@ -15,14 +16,20 @@
         protected IBallonFactory ballonsFactory = default;
         protected ISpritePositionSetter positionSetter = default;
         protected float spawnSpeed = default;
+        protected ActiveBalloons activeBalloons = default;
 
         protected Coroutine spawnCoroutine = default;
 
         [Inject]
-        protected virtual void Construct(IBallonFactory ballonsFactory, ISpritePositionSetter positionSetter, GameSpeedController gameSpeedController, BallonSpawnSettings ballonSpawnSettings)
+        protected virtual void Construct(IBallonFactory ballonsFactory, 
+                                         ISpritePositionSetter positionSetter, 
+                                         GameSpeedController gameSpeedController, 
+                                         BallonSpawnSettings ballonSpawnSettings,
+                                         ActiveBalloons activeBalloons)
         {
             this.ballonsFactory = ballonsFactory;
             this.positionSetter = positionSetter;
+            this.activeBalloons = activeBalloons;
             spawnSpeed = ballonSpawnSettings.SpawnInterval * gameSpeedController.CurrentSpeed;
         }
 
@@ -50,6 +57,7 @@
             {
                 BallonFacade ballon = ballonsFactory.CreateObject();
                 positionSetter.SetPosition(ballon.transform,ballon.BallonSpriteRenderer);
+                activeBalloons.AddToList(ballon);
                 yield return new WaitForSeconds(spawnSpeed);
             }
         }
