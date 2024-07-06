@@ -27,9 +27,9 @@
         }
         protected float currentSpeed = default;
 
-        public GameSpeedController(MovementSettings movementSettings)
+        public GameSpeedController(GeneralSetting generalSetting)
         {
-            currentSpeed = movementSettings.StartSpeed;
+            currentSpeed = generalSetting.StartGameSpeed;
         }
     }
 }

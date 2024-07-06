@@ -1,5 +1,6 @@
 ﻿namespace Ballons.Features.BallonsMovement
 {
+    using Ballons.Features.GameSettings;
     using Ballons.Features.GameSpeed;
     using UnityEngine;
 
@@ -11,10 +12,8 @@
         protected float speed = default;
         protected Vector3 startPosition = default;
 
-        public VerticalMovementController(GameSpeedController gameSpeedController)
-        {
-            speed = gameSpeedController.CurrentSpeed;
-        }
+        public VerticalMovementController(GameSpeedController gameSpeedController, MovementSettings movementSettings) =>
+            speed = movementSettings.MovementSpeed * gameSpeedController.CurrentSpeed;
 
         /// <summary>
         /// Переместить объект по вертикали

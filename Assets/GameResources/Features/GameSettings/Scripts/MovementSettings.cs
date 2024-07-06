@@ -1,10 +1,13 @@
-namespace Ballons.Features.GameSettings
+﻿namespace Ballons.Features.GameSettings
 {
     using System;
 
+    /// <summary>
+    /// Настройки передвижения
+    /// </summary>
     [Serializable]
     public class MovementSettings
     {
-        public float StartSpeed = default;
+        public float MovementSpeed = default;
     }
 }
