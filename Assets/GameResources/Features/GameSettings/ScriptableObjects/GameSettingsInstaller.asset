@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc502cf5c66eff4d9d39cff457e0c73, type: 3}
   m_Name: GameSettingsInstaller
   m_EditorClassIdentifier: 
-  movementSettings:
-    StartSpeed: 0.02
+  _generalSettings:
+    StartGameSpeed: 1
+  _movementSettings:
+    MovementSpeed: 0.05
+  _ballonSpawnSettings:
+    SpawnInterval: 0.7
