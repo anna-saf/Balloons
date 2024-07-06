@@ -1,6 +1,7 @@
 namespace Ballons.Features.BallonsSpawner
 {
     using Ballons.Features.Utilities;
+    using Balloons.Features.BalloonDestroy;
     using UnityEngine;
     using Zenject;
 
@@ -19,7 +20,8 @@ namespace Ballons.Features.BallonsSpawner
             BindSpritePositionSetter();
             BindBallonsPool();
             BindBallonFactory();
-            BindBallonsSpawner();
+            BindBallonsSpawner(); 
+            BindReleaseBalloons();
         }
 
         private void BindSpritePositionSetter()
@@ -36,5 +38,8 @@ namespace Ballons.Features.BallonsSpawner
 
         private void BindBallonsSpawner() =>
             Container.Bind<BallonsSpawner>().FromInstance(_ballonSpawner).AsSingle();
+
+        private void BindReleaseBalloons() =>
+            Container.Bind<ReleaseBalloons>().AsSingle().NonLazy();
     }
 }
