@@ -15,6 +15,6 @@ MonoBehaviour:
   _generalSettings:
     StartGameSpeed: 1
   _movementSettings:
-    MovementSpeed: 0.05
+    MovementSpeed: 0.03
   _ballonSpawnSettings:
-    SpawnInterval: 0.7
+    SpawnInterval: 1
