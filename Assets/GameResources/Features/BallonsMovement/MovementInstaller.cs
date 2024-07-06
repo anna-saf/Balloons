@@ -7,9 +7,10 @@
     /// </summary>
     public class MovementInstaller : MonoInstaller
     {
-        public override void InstallBindings()
-        {
+        public override void InstallBindings() =>
+            BindMovementController();
+
+        private void BindMovementController() =>
             Container.Bind<IMovement>().To<VerticalMovementController>().AsTransient();
-        }
     }
 }
