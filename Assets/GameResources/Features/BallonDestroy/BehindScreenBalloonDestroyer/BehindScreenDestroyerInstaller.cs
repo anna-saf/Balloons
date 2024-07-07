@@ -15,11 +15,15 @@
         {
             BindBehindScreenBalloonsDestroyer(); 
             BindBehindScreenDestroyerController();
+            BindIntactBallonsLifeDecreaser();
         }
         private void BindBehindScreenBalloonsDestroyer() =>
             Container.BindInstance(behindScreenBalloonsDestroyer).AsSingle();
 
         private void BindBehindScreenDestroyerController() =>
             Container.Bind<BehindScreenDestroyerController>().AsSingle().NonLazy();
+
+        private void BindIntactBallonsLifeDecreaser() =>
+            Container.Bind<IntactBallonsLifeDecreaser>().AsSingle().NonLazy();
     }
 }

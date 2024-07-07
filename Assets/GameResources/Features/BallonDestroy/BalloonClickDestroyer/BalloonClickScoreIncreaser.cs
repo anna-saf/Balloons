@@ -1,10 +1,10 @@
-using Balloons.Features.BalloonDestroy;
+п»їusing Balloons.Features.BalloonDestroy;
 using Balloons.Features.GlobalGameValues;
 using Balloons.Features.Utilities;
 using Zenject;
 
 /// <summary>
-/// Увеличивает счет, если произошел клик на шар
+/// РЈРІРµР»РёС‡РёРІР°РµС‚ СЃС‡РµС‚, РµСЃР»Рё РїСЂРѕРёР·РѕС€РµР» РєР»РёРє РЅР° С€Р°СЂ
 /// </summary>
 public class BalloonClickScoreIncreaser
 {
