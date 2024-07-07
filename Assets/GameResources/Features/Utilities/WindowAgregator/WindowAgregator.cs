@@ -17,7 +17,7 @@
         [SerializeField]
         protected WindowType startWindow = default;
 
-        protected WindowType selectedWindow = default;
+        protected List<WindowType> activeWindows = new List<WindowType>();
 
         protected virtual void OnEnable() =>
             SetWindowActive(startWindow);
@@ -26,27 +26,34 @@
         /// Задать окно активным
         /// </summary>
         /// <param name="window"></param>
-        public virtual void SetWindowActive(WindowType window)
+        public virtual void SetWindowActive(WindowType window, bool needClose = true)
         {
-            CloseWindow(selectedWindow);
+            if (needClose)
+            {
+                CloseWindows();
+            }
             if(TryFindWindow(window, out GameObject windowGO))
             {
-                selectedWindow = window;
+                activeWindows.Add(window);
                 windowGO.SetActive(true);
                 onWindowOpened(window);
             }
         }
 
         /// <summary>
-        /// Отключить окно
+        /// Отключить все окнa
         /// </summary>
         /// <param name="window"></param>
-        public virtual void CloseWindow(WindowType window)
+        public virtual void CloseWindows()
         {
-            if (TryFindWindow(window, out GameObject windowGO))
+            foreach (WindowType window in activeWindows)
             {
-                windowGO.SetActive(false);
+                if (TryFindWindow(window, out GameObject windowGO))
+                {
+                    windowGO.SetActive(false);
+                }
             }
+            activeWindows.Clear();
         }
 
         protected bool TryFindWindow(WindowType window, out GameObject windowGO)
