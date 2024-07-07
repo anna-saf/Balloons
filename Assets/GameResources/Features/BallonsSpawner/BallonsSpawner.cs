@@ -29,7 +29,7 @@
             this.ballonsFactory = ballonsFactory;
             this.positionSetter = positionSetter;
             this.activeBalloons = activeBalloons;
-            spawnSpeed = ballonSpawnSettings.SpawnInterval * gameSpeedController.CurrentSpeed;
+            spawnSpeed = (float)ballonSpawnSettings.SpawnInterval / gameSpeedController.CurrentSpeed;
         }
 
         /// <summary>
