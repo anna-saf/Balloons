@@ -10,5 +10,6 @@
     public class GeneralSetting
     {
         public float StartGameSpeed = default;
+        public int StartLifesCount= default;
     }
 }
