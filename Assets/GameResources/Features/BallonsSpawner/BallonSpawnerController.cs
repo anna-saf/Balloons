@@ -2,53 +2,30 @@
 {
     using Ballons.Features.BallonsSpawner;
     using Balloons.Features.GlobalGameEvents;
-    using System;
 
     /// <summary>
     /// Контроллер спавнера шаров в зависимости от состояния игры
     /// </summary>
-    public class BallonSpawnerController: IDisposable
+    public class BallonSpawnerController: GlobalGameEventsProvider
     {
-        protected GlobalGameEvents globalGameEvents = default;
         protected BallonsSpawner ballonsSpawner = default;
 
-        protected BallonSpawnerController(GlobalGameEvents globalGameEvents, BallonsSpawner ballonsSpawner)
-        {
-            this.globalGameEvents = globalGameEvents;
+        protected BallonSpawnerController(GlobalGameEvents globalGameEvents, BallonsSpawner ballonsSpawner): base(globalGameEvents) =>
             this.ballonsSpawner = ballonsSpawner; 
 
-            globalGameEvents.onStartGame += OnStartGame;
-            globalGameEvents.onPauseGame += OnPauseGame;
-            globalGameEvents.onContinueGame += OnContinueGame;
-            globalGameEvents.onEndGame += OnEndGame;
-            globalGameEvents.onGoToMenu += OnGoToMenu;
-        }
-
-        protected virtual void OnStartGame() =>
+        protected override void OnStartGame() =>
             ballonsSpawner.StartSpawn();
 
-        protected virtual void OnPauseGame() => 
+        protected override void OnPauseGame() => 
             ballonsSpawner.StopSpawn();
 
-        protected virtual void OnContinueGame() =>
+        protected override void OnContinueGame() =>
             ballonsSpawner.StartSpawn();
 
-        protected virtual void OnEndGame() =>
+        protected override void OnEndGame() =>
             ballonsSpawner.StopSpawn();
 
-        protected virtual void OnGoToMenu() =>
+        protected override void OnGoToMenu() =>
             ballonsSpawner.StopSpawn();
-
-        public void Dispose()
-        {
-            if(globalGameEvents != null)
-            {
-                globalGameEvents.onStartGame -= OnStartGame;
-                globalGameEvents.onPauseGame -= OnPauseGame;
-                globalGameEvents.onContinueGame -= OnContinueGame;
-                globalGameEvents.onEndGame -= OnEndGame;
-                globalGameEvents.onGoToMenu -= OnGoToMenu;
-            }
-        }
     }
 }
