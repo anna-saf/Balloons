@@ -3,7 +3,6 @@
     using Ballons.Features.GameSettings;
     using Ballons.Features.GameSpeed;
     using Ballons.Features.Utilities;
-    using Balloons.Features.ActiveBalloons;
     using System.Collections;
     using UnityEngine;
     using Zenject;
@@ -16,7 +15,7 @@
         protected IBallonFactory ballonsFactory = default;
         protected ISpritePositionSetter positionSetter = default;
         protected float spawnSpeed = default;
-        protected ActiveBalloons activeBalloons = default;
+        protected GenericEventList<BallonFacade> activeBalloons = default;
 
         protected Coroutine spawnCoroutine = default;
 
@@ -25,7 +24,7 @@
                                          ISpritePositionSetter positionSetter, 
                                          GameSpeedController gameSpeedController, 
                                          BallonSpawnSettings ballonSpawnSettings,
-                                         ActiveBalloons activeBalloons)
+                                         GenericEventList<BallonFacade> activeBalloons)
         {
             this.ballonsFactory = ballonsFactory;
             this.positionSetter = positionSetter;

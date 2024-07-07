@@ -12,7 +12,7 @@
     {
         protected GenericComponentPool<BallonFacade> ballonsPool = default;
 
-        public ReleaseBalloons(GenericComponentPool<BallonFacade> ballonsPool, ActiveBalloons activeBalloons)
+        public ReleaseBalloons(GenericComponentPool<BallonFacade> ballonsPool, GenericEventList<BallonFacade> activeBalloons)
         {
             this.ballonsPool = ballonsPool;
             genericEventList = activeBalloons;
