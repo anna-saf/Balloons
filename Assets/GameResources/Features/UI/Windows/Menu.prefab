@@ -379,6 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetWindow: 1
+  needClose: 1
 --- !u!1 &3687193617836507353
 GameObject:
   m_ObjectHideFlags: 0
