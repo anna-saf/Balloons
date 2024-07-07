@@ -44,7 +44,7 @@
             ///Переопределить при необходимости
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             if (globalGameEvents != null)
             {
