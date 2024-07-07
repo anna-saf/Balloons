@@ -10,6 +10,8 @@
     {
         [SerializeField]
         protected WindowType targetWindow = default;
+        [SerializeField]
+        protected bool needClose = true;
 
         protected WindowAgregator windowAgregator = default;
 
@@ -18,6 +20,6 @@
             this.windowAgregator = windowAgregator;
 
         protected override void Action() =>
-            windowAgregator.SetWindowActive(targetWindow);
+            windowAgregator.SetWindowActive(targetWindow, needClose);
     }
 }
