@@ -1,15 +1,16 @@
 ﻿namespace Balloons.Features.BalloonDestroy
 {
     using Ballons.Features.BallonsSpawner;
+    using Ballons.Features.Utilities;
     using Balloons.Features.ActiveBalloons;
     using UnityEngine;
 
     /// <summary>
     /// Удаляет шар из списка активных, если произошел клик на шар
     /// </summary>
-    public class BalloonDestroyController : ActiveBalloonsProvider
+    public class BalloonClickDestroyer : ActiveBalloonsProvider
     {
-        public BalloonDestroyController(ActiveBalloons activeBalloons)
+        public BalloonClickDestroyer(GenericEventList<BallonFacade> activeBalloons)
         {
             genericEventList = activeBalloons;      
             Subscribe();
