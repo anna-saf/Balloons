@@ -1,5 +1,7 @@
 ﻿namespace Balloons.Features.ActiveBalloons
 {
+    using Ballons.Features.BallonsSpawner;
+    using Ballons.Features.Utilities;
     using Zenject;
 
     /// <summary>
@@ -8,6 +10,9 @@
     public class ActiveBalloonsInstaller : MonoInstaller
     {
         public override void InstallBindings() =>
-            Container.Bind<ActiveBalloons>().AsSingle();
+            BindBallonsPool();
+
+        private void BindBallonsPool() =>
+            Container.Bind<GenericEventList<BallonFacade>>().To<ActiveBalloons>().AsSingle();
     }
 }

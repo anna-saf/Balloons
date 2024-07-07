@@ -11,6 +11,6 @@
             BindBalloonDestroyController();
 
         private void BindBalloonDestroyController() =>
-            Container.Bind<BalloonDestroyController>().AsSingle().NonLazy();
+            Container.Bind<BalloonClickDestroyer>().AsSingle().NonLazy();
     }
 }
