@@ -3,6 +3,7 @@
     using Ballons.Features.BallonsSpawner;
     using Ballons.Features.Utilities;
     using Balloons.Features.ActiveBalloons;
+    using System;
     using UnityEngine;
 
     /// <summary>
@@ -10,6 +11,8 @@
     /// </summary>
     public class BalloonClickDestroyer : ActiveBalloonsProvider
     {
+        public event Action onBalloonDestroyed = delegate { };  
+        
         public BalloonClickDestroyer(GenericEventList<BallonFacade> activeBalloons)
         {
             genericEventList = activeBalloons;      
@@ -27,7 +30,10 @@
             }
         }
 
-        protected virtual void OnBalloonClicked(BallonFacade balloon) =>
+        protected virtual void OnBalloonClicked(BallonFacade balloon)
+        {
             genericEventList.RemoveFromList(balloon);
+            onBalloonDestroyed();
+        }
     }
 }
