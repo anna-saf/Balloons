@@ -36,9 +36,9 @@
 
         protected virtual void OnLifesCountChanged()
         {
-            if (lifesSpawner.OrderedSpawnedLifes.Count > lifesCount.Value && lifesCount.Value >=0)
+            if (lifesSpawner.SpawnedLifes.Count > lifesCount.Value && lifesCount.Value >=0)
             {
-                LifeFacade lifeFacade = lifesSpawner.OrderedSpawnedLifes[lifesCount.Value];
+                LifeFacade lifeFacade = lifesSpawner.SpawnedLifes[lifesCount.Value];
                 if (lifeFacade)
                 {
                     lifeFacade.LifesIcon.gameObject.SetActive(false);

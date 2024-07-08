@@ -14,14 +14,14 @@
         /// <summary>
         /// Получение списка заспавненных вью жизней
         /// </summary>
-        public List<LifeFacade> OrderedSpawnedLifes => orderedSpawnedLifes;
+        public List<LifeFacade> SpawnedLifes => spawnedLifes;
         [SerializeField]
         protected Transform lifesParentTransform = default;
 
         protected ILifesFactory lifesFactory = default;
         protected GenericEventValue<int> lifesCount = default;
 
-        protected List<LifeFacade> orderedSpawnedLifes = new List<LifeFacade>();
+        protected List<LifeFacade> spawnedLifes = new List<LifeFacade>();
 
         [Inject]
         protected virtual void Construct(ILifesFactory lifesFactory, [Inject(Id = GlobalGameValueType.Lifes)] GenericEventValue<int> lifesCount)
@@ -36,7 +36,7 @@
             {
                 LifeFacade lifeFacade = lifesFactory.CreateLife();
                 lifeFacade.transform.SetParent(lifesParentTransform);
-                orderedSpawnedLifes.Add(lifeFacade);
+                spawnedLifes.Add(lifeFacade);
             }
         }
     }
