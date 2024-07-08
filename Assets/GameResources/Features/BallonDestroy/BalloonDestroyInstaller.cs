@@ -11,6 +11,7 @@
         {
             BindBalloonDestroyController();
             BindBalloonClickScoreIncreaser();
+            BindEndGameBalloonDestroyer();
         }
 
         private void BindBalloonDestroyController() =>
@@ -18,5 +19,8 @@
 
         private void BindBalloonClickScoreIncreaser() =>
             Container.Bind<BalloonClickScoreIncreaser>().AsSingle().NonLazy();
+
+        private void BindEndGameBalloonDestroyer() =>
+            Container.Bind<EndGameBalloonDestroyer>().AsSingle().NonLazy();
     }
 }

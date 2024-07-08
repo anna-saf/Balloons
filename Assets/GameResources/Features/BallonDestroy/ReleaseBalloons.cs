@@ -3,7 +3,7 @@
     using Ballons.Features.BallonsSpawner;
     using Ballons.Features.Utilities;
     using Balloons.Features.ActiveBalloons;
-    using UnityEngine;
+    using UnityEngine.Pool;
 
     /// <summary>
     /// Зарелизить шар, который стал неактивным
@@ -21,5 +21,8 @@
 
         protected override void OnRemovedFromList(BallonFacade ballon)=>
             ballonsPool.Pool.Release(ballon);
+
+        protected override void OnClearedList() =>
+            ballonsPool.Pool.Clear();
     }
 }
