@@ -1,8 +1,9 @@
 ﻿namespace Ballons.Features.BallonsSpawner
 {
     using Ballons.Features.GameSettings;
-    using Ballons.Features.GameSpeed;
     using Ballons.Features.Utilities;
+    using Balloons.Features.GlobalGameValues;
+    using Balloons.Features.Utilities;
     using System.Collections;
     using UnityEngine;
     using Zenject;
@@ -14,23 +15,43 @@
     {
         protected IBallonFactory ballonsFactory = default;
         protected ISpritePositionSetter positionSetter = default;
-        protected float spawnSpeed = default;
         protected GenericEventList<BallonFacade> activeBalloons = default;
+
+        protected float spawnInterval = default;
+        protected GenericEventValue<float> gameSpeed = default;
+
+        protected float spawnSpeed = default;
 
         protected Coroutine spawnCoroutine = default;
 
         [Inject]
         protected virtual void Construct(IBallonFactory ballonsFactory, 
                                          ISpritePositionSetter positionSetter, 
-                                         GameSpeedController gameSpeedController, 
+                                         [Inject(Id = GlobalGameValueType.Speed)]GenericEventValue<float> gameSpeed, 
                                          BallonSpawnSettings ballonSpawnSettings,
                                          GenericEventList<BallonFacade> activeBalloons)
         {
             this.ballonsFactory = ballonsFactory;
             this.positionSetter = positionSetter;
             this.activeBalloons = activeBalloons;
-            spawnSpeed = (float)ballonSpawnSettings.SpawnInterval / gameSpeedController.CurrentSpeed;
+            this.gameSpeed = gameSpeed;
+            spawnInterval = ballonSpawnSettings.SpawnInterval;
         }
+
+        protected virtual void OnEnable()
+        {
+            OnGameSpeedChanged();
+            gameSpeed.onValueChanged += OnGameSpeedChanged;
+        }
+
+        protected virtual void OnDisable()
+        {
+            gameSpeed.onValueChanged -= OnGameSpeedChanged;
+            StopSpawn();
+        }
+
+        protected void OnGameSpeedChanged() =>
+            spawnSpeed = (float)spawnInterval / gameSpeed.Value;
 
         /// <summary>
         /// Запустить спавн шаров
@@ -60,8 +81,5 @@
                 yield return new WaitForSeconds(spawnSpeed);
             }
         }
-
-        protected virtual void OnDisable() =>
-            StopSpawn();
     }
 }
