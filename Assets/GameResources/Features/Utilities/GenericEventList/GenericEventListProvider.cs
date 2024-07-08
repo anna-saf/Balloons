@@ -14,8 +14,8 @@
         protected virtual void Subscribe()
         {
             genericEventList.onAddedToList += OnAddedToList;
-            genericEventList.beforeRemoveFromList += BeforeRemovedFromList;
-            genericEventList.onRemovedFromList += OnRemovedFromList; 
+            genericEventList.onRemovedFromList += OnRemovedFromList;
+            genericEventList.onClearedList += OnClearedList;
         }
 
         protected virtual void Unsubscribe()
@@ -23,8 +23,8 @@
             if (genericEventList != null)
             {
                 genericEventList.onAddedToList -= OnAddedToList;
-                genericEventList.beforeRemoveFromList -= BeforeRemovedFromList;
                 genericEventList.onRemovedFromList -= OnAddedToList;
+                genericEventList.onClearedList -= OnClearedList;
             }
         }
 
@@ -33,12 +33,12 @@
             ///При необходимости реализовать в наследниках
         }
 
-        protected virtual void BeforeRemovedFromList(T obj)
+        protected virtual void OnRemovedFromList(T obj)
         {
             ///При необходимости реализовать в наследниках
         }
 
-        protected virtual void OnRemovedFromList(T obj)
+        protected virtual void OnClearedList()
         {
             ///При необходимости реализовать в наследниках
         }
