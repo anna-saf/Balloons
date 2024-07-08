@@ -36,6 +36,7 @@
             {
                 LifeFacade lifeFacade = lifesFactory.CreateLife();
                 lifeFacade.transform.SetParent(lifesParentTransform);
+                lifeFacade.transform.localScale = Vector3.one;
                 spawnedLifes.Add(lifeFacade);
             }
         }
