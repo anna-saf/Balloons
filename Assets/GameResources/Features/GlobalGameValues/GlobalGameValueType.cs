@@ -6,6 +6,7 @@
     public enum GlobalGameValueType
     {
         Lifes,
-        Score
+        Score,
+        Speed
     }
 }
