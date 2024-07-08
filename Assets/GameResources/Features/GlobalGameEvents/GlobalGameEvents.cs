@@ -59,6 +59,6 @@
         /// Перейти в меню
         /// </summary>
         public void GoToMenu() =>
-            onEndGame();
+            onGoToMenu();
     }
 }

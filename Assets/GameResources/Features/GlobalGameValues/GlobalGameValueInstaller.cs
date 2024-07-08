@@ -1,8 +1,8 @@
 ﻿namespace Balloons.Features.GlobalGameValues
 {
     using Ballons.Features.GameSettings;
+    using Balloons.Features.GlobalGameEvents;
     using Balloons.Features.Utilities;
-    using UnityEngine.SocialPlatforms.Impl;
     using Zenject;
 
     /// <summary>
