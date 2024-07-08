@@ -82,7 +82,7 @@
         protected virtual void OnDestroyPoolObject(T itemPool)
         {
             RemoveFromActiveObjectsList(itemPool);
-            Destroy(itemPool);
+            itemPool.gameObject.SetActive(false);
         }
 
         protected virtual void RemoveFromActiveObjectsList(T itemPool)

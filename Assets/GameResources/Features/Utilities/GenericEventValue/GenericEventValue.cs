@@ -6,7 +6,7 @@
     /// Джененик значение со свойством на изменение
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class GenericEventValue<T> 
+    public class GenericEventValue<T>
     {
         /// <summary>
         /// Вызывается при изменении значения
@@ -27,5 +27,19 @@
             }
         }
         protected T value = default;
+
+        protected T defaultValue = default;
+
+        public GenericEventValue(T value = default)
+        {
+            defaultValue = value;
+            Value = value;
+        }
+
+        /// <summary>
+        /// Сбросить значение до дефолтного
+        /// </summary>
+        public void SetDefaultValue() =>
+            Value = defaultValue;
     }
 }

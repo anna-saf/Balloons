@@ -7,6 +7,8 @@
     {
         Menu,
         Game, 
-        Pause
+        Pause,
+        EndGame,
+        Records
     }
 }
