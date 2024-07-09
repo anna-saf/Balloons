@@ -4,7 +4,6 @@
     using Balloons.Features.Utilities;
     using Balloons.Features.GlobalGameEvents;
     using Zenject;
-    using UnityEngine;
 
     /// <summary>
     /// Меняет вью потерянной жизни

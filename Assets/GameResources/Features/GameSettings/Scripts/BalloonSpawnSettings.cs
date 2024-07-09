@@ -3,11 +3,11 @@
     using System;
 
     /// <summary>
-    /// Настройки передвижения
+    /// Настройки спавна шаров
     /// </summary>
     [Serializable]
-    public class MovementSettings
+    public class BalloonSpawnSettings
     {
-        public float MovementSpeed = default;
+        public float SpawnInterval = default;
     }
 }

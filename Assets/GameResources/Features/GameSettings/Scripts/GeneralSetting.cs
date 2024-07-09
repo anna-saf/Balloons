@@ -1,4 +1,4 @@
-﻿namespace Ballons.Features.GameSettings
+﻿namespace Balloons.Features.GameSettings
 {
     using System;
     using UnityEngine;

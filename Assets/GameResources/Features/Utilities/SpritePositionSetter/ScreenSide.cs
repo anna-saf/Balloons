@@ -1,4 +1,4 @@
-﻿namespace Ballons.Features.Utilities
+﻿namespace Balloons.Features.Utilities
 {
     /// <summary>
     /// Перечисление сторон экрана
