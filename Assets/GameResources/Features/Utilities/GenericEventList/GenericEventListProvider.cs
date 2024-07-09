@@ -1,7 +1,6 @@
-﻿namespace Ballons.Features.Utilities
+﻿namespace Balloons.Features.Utilities
 {
     using System;
-    using UnityEngine;
 
     /// <summary>
     /// Дженерик провайдер листа объектов с ивентами

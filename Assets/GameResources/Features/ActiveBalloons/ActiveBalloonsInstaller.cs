@@ -1,7 +1,7 @@
 ﻿namespace Balloons.Features.ActiveBalloons
 {
-    using Ballons.Features.BallonsSpawner;
-    using Ballons.Features.Utilities;
+    using Balloons.Features.BallonsSpawner;
+    using Balloons.Features.Utilities;
     using Zenject;
 
     /// <summary>
@@ -13,6 +13,6 @@
             BindBallonsPool();
 
         private void BindBallonsPool() =>
-            Container.Bind<GenericEventList<BallonFacade>>().To<ActiveBalloons>().AsSingle();
+            Container.Bind<GenericEventList<BalloonFacade>>().To<ActiveBalloons>().AsSingle();
     }
 }

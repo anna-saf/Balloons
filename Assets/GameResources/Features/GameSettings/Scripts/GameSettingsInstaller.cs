@@ -1,4 +1,4 @@
-﻿namespace Ballons.Features.GameSettings
+﻿namespace Balloons.Features.GameSettings
 {
     using UnityEngine;
     using Zenject;
@@ -14,7 +14,7 @@
         [SerializeField]
         private MovementSettings _movementSettings = default;
         [SerializeField]
-        private BallonSpawnSettings _ballonSpawnSettings = default;
+        private BalloonSpawnSettings _ballonSpawnSettings = default;
 
         public override void InstallBindings()
         {
