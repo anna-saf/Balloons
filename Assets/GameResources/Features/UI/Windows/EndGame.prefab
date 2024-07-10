@@ -1719,6 +1719,7 @@ GameObject:
   - component: {fileID: 8427183773364225189}
   - component: {fileID: 2437499808135361132}
   - component: {fileID: 8071172438216187426}
+  - component: {fileID: 5670192591358335896}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -1816,6 +1817,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recordRowPrefab: {fileID: 4064334469966654749, guid: 26a04fe359d627e48b7054eb3ca57e66, type: 3}
   spawnParent: {fileID: 7806693135665412834}
+--- !u!114 &5670192591358335896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5228340320921609849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &6014856764105571841
 GameObject:
   m_ObjectHideFlags: 0
