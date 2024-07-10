@@ -16,5 +16,8 @@
 
         protected override void OnEndGame() =>
             activeBallons.ClearList();
+
+        protected override void OnGoToMenu() =>
+            activeBallons.ClearList();
     }
 }
