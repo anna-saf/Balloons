@@ -44,6 +44,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124854b891519f3468fb7462ac50502a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3174161911309147580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6520431759532965409}
+  - component: {fileID: 7299820193052183549}
+  m_Layer: 0
+  m_Name: RecordsReadWrite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6520431759532965409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3174161911309147580}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 55.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5589975001307809926}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7299820193052183549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3174161911309147580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e861e058100594f880a574355f4eed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3775109156669384566
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +164,7 @@ Transform:
   m_Children:
   - {fileID: 8050415679126860478}
   - {fileID: 2567817342780721915}
+  - {fileID: 6520431759532965409}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &819948297635445956
@@ -139,6 +184,7 @@ MonoBehaviour:
   _monoInstallers:
   - {fileID: 8683655673015257984}
   - {fileID: 2292016090059080997}
+  - {fileID: 7299820193052183549}
   _installerPrefabs: []
   _parentNewObjectsUnderContext: 1
   _editorReflectionBakingCoverageMode: 0
