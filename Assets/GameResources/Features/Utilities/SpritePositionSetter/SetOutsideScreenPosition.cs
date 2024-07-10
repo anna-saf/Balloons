@@ -7,7 +7,7 @@
     /// </summary>
     public class SetOutsideScreenPosition : ISpritePositionSetter
     {
-        protected const int HALF_VALUE = 2;
+        protected const int HALF_VALUE_DECREASER = 2;
         protected ScreenSide positionScreenSide = default;
 
         protected float minX = default;
@@ -20,8 +20,8 @@
 
         public void SetPosition(Transform targetObjectTransform, SpriteRenderer targetObjectSprite)
         {
-            float spriteHalfWidth = targetObjectSprite.bounds.size.x/ HALF_VALUE;
-            float spriteHalfHeight = targetObjectSprite.bounds.size.y/ HALF_VALUE;
+            float spriteHalfWidth = targetObjectSprite.bounds.size.x/ HALF_VALUE_DECREASER;
+            float spriteHalfHeight = targetObjectSprite.bounds.size.y/ HALF_VALUE_DECREASER;
 
             Vector3 minScreenCoord = Camera.main.ViewportToWorldPoint(Vector3.zero);
             Vector3 maxScreenCoord = Camera.main.ViewportToWorldPoint(Vector3.one);
