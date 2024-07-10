@@ -27,6 +27,9 @@
         protected override void OnEndGame() =>
             lifesCount.onValueChanged -= OnLifesCountChanged;
 
+        protected override void OnGoToMenu() =>
+            lifesCount.onValueChanged -= OnLifesCountChanged;
+
         public override void Dispose()
         {
             base.Dispose();
