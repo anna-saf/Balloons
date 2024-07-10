@@ -6,7 +6,8 @@
     /// <summary>
     /// Провайдер листа шаров с ивентами
     /// </summary>
-    public abstract class ActiveBalloonsProvider: GenericEventListProvider<BalloonFacade>
+    public abstract class ActiveBalloonsProvider : GenericEventListProvider<BalloonFacade>
     {
+        protected ActiveBalloonsProvider(GenericEventList<BalloonFacade> genericEventList) : base(genericEventList) { }
     }
 }

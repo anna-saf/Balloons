@@ -19,16 +19,23 @@
         {
             this.gameEvents = gameEvents;
             this.lifes = lifes;
-            lifes.onValueChanged += OnLifesCountChanged;
+            gameEvents.onStartGame += OnStartGame;
         }
 
-        public void Dispose() =>
+        protected virtual void OnStartGame() =>
+            lifes.onValueChanged += OnLifesCountChanged;
+
+        public void Dispose()
+        {
             lifes.onValueChanged -= OnLifesCountChanged;
+            gameEvents.onStartGame -= OnStartGame;
+        }
 
         protected virtual void OnLifesCountChanged()
         {
             if(lifes.Value <= 0)
             {
+                lifes.onValueChanged -= OnLifesCountChanged;
                 gameEvents.EndGame();
             }
         }
