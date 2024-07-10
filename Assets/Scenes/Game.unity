@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 416505634}
   - component: {fileID: 416505633}
   m_Layer: 0
-  m_Name: BehindScreenBallonsDestroy
+  m_Name: BehindScreenBalloonsDestroy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 634283876}
   - component: {fileID: 634283875}
   m_Layer: 0
-  m_Name: BallonsSpawn
+  m_Name: BalloonsSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballonsPool: {fileID: 1813358971}
-  _ballonSpawner: {fileID: 1137526229}
+  _ballonSpawner: {fileID: 1137526231}
 --- !u!114 &634283876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,26 +702,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1137526230}
-  - component: {fileID: 1137526229}
+  - component: {fileID: 1137526231}
   m_Layer: 0
-  m_Name: BallonSpawner
+  m_Name: BalloonSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1137526229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1137526228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f145add5b04095a4ca3aa893d5fca6d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1137526230
 Transform:
   m_ObjectHideFlags: 0
@@ -737,6 +725,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 634283874}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1137526231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137526228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c22455ef4ef703418b8912f687c33ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1264174118
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +838,7 @@ GameObject:
   - component: {fileID: 1331099921}
   - component: {fileID: 1331099922}
   m_Layer: 0
-  m_Name: BehindScreenBallonsDestroyer
+  m_Name: BehindScreenBalloonsDestroyer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1177,7 +1177,7 @@ GameObject:
   - component: {fileID: 1813358967}
   - component: {fileID: 1813358971}
   m_Layer: 0
-  m_Name: BallonsPool
+  m_Name: BalloonsPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1492,29 +1492,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 147492753}
     m_Modifications:
-    - target: {fileID: 846900803637259394, guid: 4317a97c102db904db6af3c12cea7528, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 846900803637259394, guid: 4317a97c102db904db6af3c12cea7528, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 846900803637259394, guid: 4317a97c102db904db6af3c12cea7528, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 806.08093
-      objectReference: {fileID: 0}
-    - target: {fileID: 846900803637259394, guid: 4317a97c102db904db6af3c12cea7528, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 403.04047
-      objectReference: {fileID: 0}
-    - target: {fileID: 846900803637259394, guid: 4317a97c102db904db6af3c12cea7528, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2914221949013300900, guid: 4317a97c102db904db6af3c12cea7528, type: 3}
-      propertyPath: enabledObjects.Array.data[0]
-      value: 
+    - target: {fileID: 4211127524968186583, guid: 4317a97c102db904db6af3c12cea7528, type: 3}
+      propertyPath: m_Color.a
+      value: 0.85490197
       objectReference: {fileID: 0}
     - target: {fileID: 4600665401400357199, guid: 4317a97c102db904db6af3c12cea7528, type: 3}
       propertyPath: m_Name
@@ -1632,26 +1612,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 147492753}
     m_Modifications:
-    - target: {fileID: 10153282069089407, guid: cda65656c16643e4cafe64adf33e3874, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 10153282069089407, guid: cda65656c16643e4cafe64adf33e3874, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 10153282069089407, guid: cda65656c16643e4cafe64adf33e3874, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 10153282069089407, guid: cda65656c16643e4cafe64adf33e3874, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 10153282069089407, guid: cda65656c16643e4cafe64adf33e3874, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5911376770954071355, guid: cda65656c16643e4cafe64adf33e3874, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1732,6 +1692,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6552461349588781911, guid: cda65656c16643e4cafe64adf33e3874, type: 3}
+      propertyPath: m_Color.a
+      value: 0.85490197
+      objectReference: {fileID: 0}
     - target: {fileID: 6646980481553854607, guid: cda65656c16643e4cafe64adf33e3874, type: 3}
       propertyPath: m_Name
       value: EndGame
@@ -1739,6 +1703,18 @@ PrefabInstance:
     - target: {fileID: 6646980481553854607, guid: cda65656c16643e4cafe64adf33e3874, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935193063990057240, guid: cda65656c16643e4cafe64adf33e3874, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935193063990057240, guid: cda65656c16643e4cafe64adf33e3874, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935193063990057240, guid: cda65656c16643e4cafe64adf33e3874, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 810.16064
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
