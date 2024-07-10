@@ -40,6 +40,18 @@
         protected IObjectPool<T> pool = default;
         protected List<T> activeObjectsInPool = new List<T>();
 
+        /// <summary>
+        /// Зарелизить все активные объекты
+        /// </summary>
+        public void ReleaseAll()
+        {
+            List<T> reservList = new List<T>(activeObjectsInPool);
+            foreach(T activeObject in reservList)
+            {
+                pool.Release(activeObject);
+            }
+        }
+
         protected virtual T CreatePooledItem()
         {
             GameObject spawnedGO = SpawnPooledItem();
@@ -47,7 +59,6 @@
             {
                 if (spawnedGO.TryGetComponent(out T component))
                 {
-                    AddToActiveObjectsList(component);
                     return component;
                 }
                 else
@@ -79,11 +90,8 @@
             itemPool.gameObject.SetActive(true);
         }
 
-        protected virtual void OnDestroyPoolObject(T itemPool)
-        {
-            RemoveFromActiveObjectsList(itemPool);
-            itemPool.gameObject.SetActive(false);
-        }
+        protected virtual void OnDestroyPoolObject(T itemPool) =>
+            Destroy(itemPool.gameObject);
 
         protected virtual void RemoveFromActiveObjectsList(T itemPool)
         {

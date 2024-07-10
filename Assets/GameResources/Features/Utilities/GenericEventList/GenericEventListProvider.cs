@@ -10,9 +10,13 @@
     {
         protected GenericEventList<T> genericEventList = default;
 
+        protected GenericEventListProvider(GenericEventList<T> genericEventList) =>
+            this.genericEventList = genericEventList;   
+
         protected virtual void Subscribe()
         {
             genericEventList.onAddedToList += OnAddedToList;
+            genericEventList.beforeRemovedFromList += BeforeRemovedFromList;
             genericEventList.onRemovedFromList += OnRemovedFromList;
             genericEventList.onClearedList += OnClearedList;
         }
@@ -22,12 +26,18 @@
             if (genericEventList != null)
             {
                 genericEventList.onAddedToList -= OnAddedToList;
+                genericEventList.beforeRemovedFromList -= BeforeRemovedFromList;
                 genericEventList.onRemovedFromList -= OnAddedToList;
                 genericEventList.onClearedList -= OnClearedList;
             }
         }
 
         protected virtual void OnAddedToList(T obj)
+        {
+            ///При необходимости реализовать в наследниках
+        }
+
+        protected virtual void BeforeRemovedFromList(T obj)
         {
             ///При необходимости реализовать в наследниках
         }
