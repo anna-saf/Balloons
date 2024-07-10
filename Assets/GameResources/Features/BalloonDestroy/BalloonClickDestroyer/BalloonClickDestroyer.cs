@@ -4,6 +4,7 @@
     using Balloons.Features.Utilities;
     using Balloons.Features.ActiveBalloons;
     using System;
+    using UnityEngine;
 
     /// <summary>
     /// Удаляет шар из списка активных, если произошел клик на шар
@@ -12,16 +13,13 @@
     {
         public event Action onBalloonDestroyed = delegate { };  
         
-        public BalloonClickDestroyer(GenericEventList<BalloonFacade> activeBalloons)
-        {
-            genericEventList = activeBalloons;      
+        public BalloonClickDestroyer(GenericEventList<BalloonFacade> activeBalloons) : base(activeBalloons) =>  
             Subscribe();
-        }
 
         protected override void OnAddedToList(BalloonFacade ballon) =>
             ballon.onBalloonClicked += OnBalloonClicked;
 
-        protected override void OnRemovedFromList(BalloonFacade ballon)
+        protected override void BeforeRemovedFromList(BalloonFacade ballon)
         {
             if (ballon != null)
             {

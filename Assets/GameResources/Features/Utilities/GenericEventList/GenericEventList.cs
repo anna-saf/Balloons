@@ -15,6 +15,10 @@
         /// </summary>
         public event Action<T> onAddedToList = delegate { };
         /// <summary>
+        /// Вызывается до удаления элемента из листа (для совершения отписок)
+        /// </summary>
+        public event Action<T> beforeRemovedFromList = delegate { };
+        /// <summary>
         /// Вызывается при удалении элемента из листа
         /// </summary>
         public event Action<T> onRemovedFromList = delegate { };
@@ -55,6 +59,7 @@
         {
             if (genericList.Contains(itemList))
             {
+                beforeRemovedFromList(itemList);
                 genericList.Remove(itemList);
                 onRemovedFromList(itemList);
             }
@@ -64,8 +69,15 @@
             }
         }
 
+        /// <summary>
+        /// Очистить лист
+        /// </summary>
         public void ClearList()
         {
+            foreach (T itemList in genericList)
+            { 
+                beforeRemovedFromList(itemList);
+            }
             genericList.Clear();
             onClearedList();
         }

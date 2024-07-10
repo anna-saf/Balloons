@@ -11,17 +11,13 @@
     {
         protected GenericComponentPool<BalloonFacade> ballonsPool = default;
 
-        public ReleaseBalloons(GenericComponentPool<BalloonFacade> ballonsPool, GenericEventList<BalloonFacade> activeBalloons)
+        public ReleaseBalloons(GenericComponentPool<BalloonFacade> ballonsPool, GenericEventList<BalloonFacade> activeBalloons): base(activeBalloons) 
         {
             this.ballonsPool = ballonsPool;
-            genericEventList = activeBalloons;
             Subscribe();
         }
 
-        protected override void OnRemovedFromList(BalloonFacade ballon)=>
+        protected override void BeforeRemovedFromList(BalloonFacade ballon)=>
             ballonsPool.Pool.Release(ballon);
-
-        protected override void OnClearedList() =>
-            ballonsPool.Pool.Clear();
     }
 }
