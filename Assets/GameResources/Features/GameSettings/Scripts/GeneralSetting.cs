@@ -1,7 +1,6 @@
 ﻿namespace Balloons.Features.GameSettings
 {
     using System;
-    using UnityEngine;
 
     /// <summary>
     /// Основные настройки игры
@@ -10,6 +9,11 @@
     public class GeneralSetting
     {
         public float StartGameSpeed = default;
-        public int StartLifesCount= default;
+        public int StartLifesCount = default;
+        /// <summary>
+        /// Сколько очков надо набрать, чтобы скорость увеличилась
+        /// </summary>
+        public int ScoreSpeedIncrease = default;
+        public float GameSpeedIncreaser = default;
     }
 }
