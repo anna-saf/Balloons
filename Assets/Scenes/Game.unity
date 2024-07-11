@@ -514,69 +514,6 @@ MonoBehaviour:
   _installerPrefabs: []
   _autoRun: 1
   _kernel: {fileID: 0}
---- !u!1 &752294682 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5342429092242432075, guid: 98e809d02051b3c40a4c5a641c60ebf8, type: 3}
-  m_PrefabInstance: {fileID: 6776286992775786418}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &752294684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 752294682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c431ff2c4a56e348915c6fe4ab8d33a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifesFactory: {fileID: 752294686}
-  lifesSpawner: {fileID: 752294687}
---- !u!114 &752294685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 752294682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scriptableObjectInstallers: []
-  _monoInstallers:
-  - {fileID: 752294684}
-  _installerPrefabs: []
-  _autoRun: 1
-  _kernel: {fileID: 0}
---- !u!114 &752294686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 752294682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d1b90c22396f3642823dd8aab7ec8fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifePrefab: {fileID: 4851866349285502391, guid: aec657544f5d7ad4aa4c593cf7131801, type: 3}
---- !u!114 &752294687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 752294682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 479bcf2d65736794682da1eb71594442, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifesParentTransform: {fileID: 2021775851}
 --- !u!1 &951597534
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,6 +550,7 @@ MonoBehaviour:
   - {fileID: 955031357}
   - {fileID: 2122447668}
   - {fileID: 1807956356}
+  - {fileID: 1354028084}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -647,6 +585,7 @@ Transform:
   - {fileID: 955031358}
   - {fileID: 2122447667}
   - {fileID: 1807956357}
+  - {fileID: 1354028083}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &955031356
@@ -952,6 +891,50 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5435107588004152028, guid: 9066ed5a138a2cd469ed10dc2d11a35f, type: 3}
   m_PrefabInstance: {fileID: 99188882334167916}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1354028082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1354028083}
+  - component: {fileID: 1354028084}
+  m_Layer: 0
+  m_Name: GameSpeedControllerInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1354028083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354028082}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 951597536}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1354028084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354028082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1492263f123dd49a9e0483369d5fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1591901001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,11 +1197,6 @@ MonoBehaviour:
   collectionChecks: 1
   maxPoolSize: 20
   templateItemPool: {fileID: 1027916660098170249, guid: 32c6f8808a1f1af4c903487634ae7ed7, type: 3}
---- !u!224 &2021775851 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6571282934987325089, guid: 98e809d02051b3c40a4c5a641c60ebf8, type: 3}
-  m_PrefabInstance: {fileID: 6776286992775786418}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2043023519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,7 +1798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6571282934987325089, guid: 98e809d02051b3c40a4c5a641c60ebf8, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7639922529479320408, guid: 98e809d02051b3c40a4c5a641c60ebf8, type: 3}
       propertyPath: m_Name
@@ -1833,19 +1811,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5342429092242432075, guid: 98e809d02051b3c40a4c5a641c60ebf8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 752294687}
-    - targetCorrespondingSourceObject: {fileID: 5342429092242432075, guid: 98e809d02051b3c40a4c5a641c60ebf8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 752294686}
-    - targetCorrespondingSourceObject: {fileID: 5342429092242432075, guid: 98e809d02051b3c40a4c5a641c60ebf8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 752294685}
-    - targetCorrespondingSourceObject: {fileID: 5342429092242432075, guid: 98e809d02051b3c40a4c5a641c60ebf8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 752294684}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98e809d02051b3c40a4c5a641c60ebf8, type: 3}
 --- !u!1 &6776286992775786419 stripped
 GameObject:
@@ -1956,6 +1922,10 @@ PrefabInstance:
     - target: {fileID: 8920529575144301390, guid: 487a14bae0f17f646a0a187b6a3282ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960155440571493417, guid: 487a14bae0f17f646a0a187b6a3282ad, type: 3}
+      propertyPath: m_Name
+      value: Back to game
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
