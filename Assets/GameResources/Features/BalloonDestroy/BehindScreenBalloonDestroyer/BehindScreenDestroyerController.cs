@@ -15,12 +15,6 @@
         protected override void OnStartGame() =>
             behindScreenBalloonDestroyer.StartCheckPosition();
 
-        protected override void OnPauseGame() =>
-            behindScreenBalloonDestroyer.StopCheckPosition();
-
-        protected override void OnContinueGame() =>
-            behindScreenBalloonDestroyer.StartCheckPosition();
-
         protected override void OnEndGame() =>
             behindScreenBalloonDestroyer.StopCheckPosition();
 

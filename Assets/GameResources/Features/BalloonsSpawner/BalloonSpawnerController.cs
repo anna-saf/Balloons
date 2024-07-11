@@ -16,12 +16,6 @@
         protected override void OnStartGame() =>
             ballonsSpawner.StartSpawn();
 
-        protected override void OnPauseGame() => 
-            ballonsSpawner.StopSpawn();
-
-        protected override void OnContinueGame() =>
-            ballonsSpawner.StartSpawn();
-
         protected override void OnEndGame() =>
             ballonsSpawner.StopSpawn();
 
