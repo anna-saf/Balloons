@@ -13,16 +13,6 @@
         public event Action onStartGame = delegate { };
 
         /// <summary>
-        /// Событие продолжения игры
-        /// </summary>
-        public event Action onContinueGame = delegate { };
-
-        /// <summary>
-        /// Событие паузы игры
-        /// </summary>
-        public event Action onPauseGame = delegate { };
-
-        /// <summary>
         /// Событие окончания игры
         /// </summary>
         public event Action onEndGame = delegate { };
@@ -36,18 +26,6 @@
         /// </summary>
         public void StartGame() =>
             onStartGame();
-
-        /// <summary>
-        /// Поставить игру на паузу
-        /// </summary>
-        public void PauseGame() =>
-            onPauseGame();
-
-        /// <summary>
-        /// Возобновить игру
-        /// </summary>
-        public void ContinueGame() =>
-            onContinueGame();
 
         /// <summary>
         /// Закончить игру

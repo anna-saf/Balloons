@@ -14,22 +14,11 @@
             this.globalGameEvents = globalGameEvents;
 
             globalGameEvents.onStartGame += OnStartGame;
-            globalGameEvents.onPauseGame += OnPauseGame;
-            globalGameEvents.onContinueGame += OnContinueGame;
             globalGameEvents.onEndGame += OnEndGame;
             globalGameEvents.onGoToMenu += OnGoToMenu;
         }
 
         protected virtual void OnStartGame()
-        {
-            ///Переопределить при необходимости
-        }
-
-        protected virtual void OnPauseGame()
-        {
-            ///Переопределить при необходимости
-        }
-        protected virtual void OnContinueGame()
         {
             ///Переопределить при необходимости
         }
@@ -49,8 +38,6 @@
             if (globalGameEvents != null)
             {
                 globalGameEvents.onStartGame -= OnStartGame;
-                globalGameEvents.onPauseGame -= OnPauseGame;
-                globalGameEvents.onContinueGame -= OnContinueGame;
                 globalGameEvents.onEndGame -= OnEndGame;
                 globalGameEvents.onGoToMenu -= OnGoToMenu;
             }
