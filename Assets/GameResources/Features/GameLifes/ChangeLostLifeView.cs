@@ -4,6 +4,7 @@
     using Balloons.Features.Utilities;
     using Balloons.Features.GlobalGameEvents;
     using Zenject;
+    using UnityEngine;
 
     /// <summary>
     /// Меняет вью потерянной жизни
@@ -43,8 +44,7 @@
                 LifeFacade lifeFacade = lifesSpawner.SpawnedLifes[lifesCount.Value];
                 if (lifeFacade)
                 {
-                    lifeFacade.LifesIcon.gameObject.SetActive(false);
-                    lifeFacade.transform.SetAsLastSibling();
+                    lifeFacade.gameObject.SetActive(false);
                 }
             }
         }
